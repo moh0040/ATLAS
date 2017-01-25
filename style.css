@@ -136,16 +136,15 @@ width: 250 px;
 
 #tbl
 {
-width:175px;
-margin: -13px 70px 0px 4px;
+width:250px;
+margin: -16px 68px 0px 0px;
 }
 
 #text
 {
 color: black;
-font-weight: 900;
-margin: -82px 86px 0px 18px;
-float:right;
+font-weight: 500;
+float:center;
 }
 
 #Name
