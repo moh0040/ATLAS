@@ -14,20 +14,25 @@ $(function() {
     	},
 	});
 //////////////////////Get name space///////////////////////////////////////////
-	$("#get").click(function(){
-		var middle = $('#tbl :selected').text(); 
+
+$(document).ready(function(e) {
+  $('#tbl').on("change", function() {
+        var middle =$("#tbl").val();
 		$.ajax({
 			type: 'GET',
 			url:'http://gate.atlascon.cz:9999/rest/a/'+middle+'/namespace',
 			success:function(data2){
-				$('#text').html(data2);
-				$('#note4').html( data2 + " has been selected as NameSpace of Application....");
+				$('#text').html("<h3>"+data2 +"</h3>");
+				$('#note4').html( "<span style=color:#F5F5F5;font-weight:bold>"+ data2 +"</span>  has been selected as NameSpace of Application....");
 			},
 			error: function() {
 				$('#note5').html('error loading Name Space!');
 	    	},
 		});
 	});
+
+  });
+
 //////////////////////////post(name and namespace)/////////////////////////////////////////////
  	$('#add-applic').on('click', function() {
 	 	var name = $('#Name').val();
@@ -45,8 +50,10 @@ $(function() {
 	    	},
     	});
 	});
+
+
+
+
+
 });
-
-
-
 
