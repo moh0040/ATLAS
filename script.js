@@ -35,7 +35,7 @@ $(function() {
       		url: 'http://gate.atlascon.cz:9999/rest/a/'+ name+"/"+namespace ,
       		contentType: "application/json",
       		success: function(newOrder) {
-			console.log("Friend added!", newOrder);
+			console.log("Data added!", newOrder);
       		},
       		error: function() {
 	        	alert('error in Posting data to server!');
@@ -43,4 +43,7 @@ $(function() {
     	});
 	});
 });
+
+
+
 
