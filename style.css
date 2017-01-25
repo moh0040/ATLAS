@@ -89,26 +89,27 @@ ul#menu li a:hover
   background-color:#2E2E2E;
 }
 #get_app{
-	margin: 0px auto 0 -8px;
-	float:left;
-	background-color:#DFDFDF;
-	width: 420px;
+  margin: 0px auto 0 -8px;
+  float:left;
+  background-color:#DFDFDF;
+  width: 420px;
   height: 200px;
-	}	
+  } 
 #add_app
 {
-	margin: 0px 20px 0 auto;
-	float:right;
-	background-color: #DFDFDF;
-	width: 420px;
-  height: 200px;		
-	}
+  margin: 0px 20px 0 auto;
+  padding-top: 0px;
+  float:right;
+  background-color: #DFDFDF;
+  width: 420px;
+  height: 200px;    
+  }
 #inside
 {
-	background-color: red;
-	width: 40px;
-  height: 20px;		
-	}
+  background-color: red;
+  width: 40px;
+  height: 20px;   
+  }
 
 #note1
 {
@@ -117,7 +118,7 @@ margin: 0px 0px 0px 15px;
 
 #note2, #note4, #note6
 {
-color: green;
+color: #9EFF00;
 font-weight: 900;
 }
 
@@ -136,32 +137,50 @@ width: 250 px;
 #tbl
 {
 width:175px;
+margin: -13px 70px 0px 4px;
 }
 
 #text
 {
 color: black;
 font-weight: 900;
+margin: -82px 86px 0px 18px;
+float:right;
 }
 
 #Name
 {
-margin: 0px 30px 0px 18px;
+margin: 0px 30px 0px 23px;
 
 }
 
 #NameSpace
 {
-margin: 15px 0px 0px 10px;
+margin: 12px 0px 0px 10px;
 
 }
 
+#lable_app
+{
+margin: -26 px 0px 20px 117px;
+font-size:20px;
+}
+#lable_app2
+{
+margin: 2px 0px -13px 124px;
+font-size:20px;
+}
+
+#add_applic
+{
+margin: 0px 0px 0px 35px;
 
 
-fieldset {
+fieldset 
+{
   font-size:12px;
   padding:10px 0px 0px 0px;
   width:200px;
-  line-height:1.8;}
-
+  line-height:1.8;
+}
 
