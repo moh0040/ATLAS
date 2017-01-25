@@ -29,7 +29,7 @@ $(function() {
 //////////////////////////post(name and namespace)/////////////////////////////////////////////
  	$('#add-order').on('click', function() {
 	 	var name = $('#name').val();
-	 	var namespace = $('#drink').val();
+	 	var namespace = $('#namespace').val();
     	$.ajax({
       		type: 'POST',
       		url: 'http://gate.atlascon.cz:9999/rest/a/'+ name+"/"+namespace ,
@@ -43,7 +43,4 @@ $(function() {
     	});
 	});
 });
-
-
-
 
