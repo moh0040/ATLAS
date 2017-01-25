@@ -38,7 +38,7 @@ $(document).ready(function(e) {
 	 	var name = $('#Name').val();
 	 	var name_space = $('#NameSpace').val();
     	$.ajax({
-      		type: 'POST',
+      		type: 'PUT',
       		url: 'http://gate.atlascon.cz:9999/rest/a/'+ name+"/"+name_space ,
       		contentType: "application/json",
       		success: function(NewApp) {
