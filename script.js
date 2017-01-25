@@ -5,40 +5,43 @@ $(function() {
    		url: 'http://gate.atlascon.cz:9999/rest/a/listNames',
    		success: function(data) {
    			for (var i = 0; i < data.length; i++) {
-     		$("#tbl2").append("<option>"+data[i]+"</option>");
+     		$("#tbl").append("<option>"+data[i]+"</option>");
      		}
+     		$('#note2').html( "Name of Applications are loaded....");
    		},
    	  	error: function() {
-        alert('error loading listNames!');
+   	     $('#note3').html('error loading listNames!');
     	},
 	});
 //////////////////////Get name space///////////////////////////////////////////
-	$('input#get').click(function(){
-		var middle = $('#tbl2 :selected').text(); 
+	$("#get").click(function(){
+		var middle = $('#tbl :selected').text(); 
 		$.ajax({
 			type: 'GET',
 			url:'http://gate.atlascon.cz:9999/rest/a/'+middle+'/namespace',
 			success:function(data2){
 				$('#text').html(data2);
+				$('#note4').html( data2 + " has been selected as NameSpace of Application....");
 			},
 			error: function() {
-	        	alert('error loading Name Space!');
+				$('#note5').html('error loading Name Space!');
 	    	},
 		});
 	});
 //////////////////////////post(name and namespace)/////////////////////////////////////////////
- 	$('#add-order').on('click', function() {
-	 	var name = $('#name').val();
-	 	var namespace = $('#namespace').val();
+ 	$('#add-applic').on('click', function() {
+	 	var name = $('#Name').val();
+	 	var name_space = $('#NameSpace').val();
     	$.ajax({
       		type: 'POST',
-      		url: 'http://gate.atlascon.cz:9999/rest/a/'+ name+"/"+namespace ,
+      		url: 'http://gate.atlascon.cz:9999/rest/a/'+ name+"/"+name_space ,
       		contentType: "application/json",
-      		success: function(newOrder) {
-			console.log("Data added!", newOrder);
+      		success: function(NewApp) {
+			$('#note6').html( NewApp + " are succcessfully sended to server...");
       		},
       		error: function() {
-	        	alert('error in Posting data to server!');
+      		$('#note7').html("Error in Posting data to server!");
+	        	
 	    	},
     	});
 	});
