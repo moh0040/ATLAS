@@ -1,67 +1,58 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-			<title>Atlas-webapp</title>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-				<link rel="stylesheet" type="text/css" href="style/style.css" />
-			</head>
-			<body>
-				<div id="main">
-					<div id="header">
-						<div id="logo">
-							<div id="logo_text">
-								<h1>
-									<a href="index.html">ATLAS</a>
-								</h1>
-							</div>
-						</div>
-						<div id="menubar">
-							<ul id="menu">
-								<li class="selected">
-									<a href="index.html">Application</a>
-								</li>
-								<li>
-									<a href="#">Schema</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div id="site_content">
-						<section id="content">
-							<article id="to-do">
-								<section>
-									<header>
-										<h2>Application' List</h2>
-									</header>
-									<label for="new-task-name">Name:</label>
-									<select id="tbl2">
-										<option>select</option>
-									</select>
-									<input id="get" type="submit" value="Get the Name Space" style="width: 150px";>
-										<br>
-											<br>
-												<label for="new-task-name">Name space:</label>
-												<span id="text" style="color:black;font-weight:bold"></span>
-												<br></br>
-												<hr>
-												</section>
-												<section>
-													<header>
-														<h2>Add a new Application</h2>
-													</header>
-													<label for="new-task-name">Name:</label>
-													<input id="name" type="text" required >
-														<label for="new-task-date">Name Space:</label>
-														<input id="drink"  type="text" required>
-															<button id="add-order">Add application...</button>
-														</section>
-													</article>
-												</section>
-											</div>
-											<div id="footer"></div>
-										</div>
-										<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-										<script type="text/javascript" src="script.js"></script>
-									</body>
-								</html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Atlas-webapp</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+        		<div id="logo_text">
+            		<h1><a href="index.html">ATLAS</a></h1>
+        		</div>
+      		</div>
+      		<div id="menubar">
+        		<ul id="menu">
+          			<li class="selected"><a href="index.html">Application</a></li>
+          			<li><a href="#">Schema</a></li>
+        		</ul>
+      		</div>
+    	</div>
+    <div id="site_content">
+        <section id="content">
+		    <article id="to-do">	
+			    <section>
+			        <header>
+				        <h2>Application' List</h2>
+				    </header>
+					    <label for="new-task-name">Name:</label>
+					<select id="tbl2">
+					    <option>select</option>
+					</select>
+					    <input id="get" type="submit" value="Get the Name Space" style="width: 150px";><br><br>
+					    <label for="new-task-name">Name space:</label>
+					   	<span id="text" style="color:black;font-weight:bold"></span><br></br><hr>
+			    </section>	
+                <section>
+            	    <header>
+					    <h2>Add a new Application</h2>
+				    </header>
+			            <label for="new-task-name">Name:</label>
+                        <input id="name" type="text" required >
+                        <label for="new-task-date">Name Space:</label>
+                        <input id="drink"  type="text" required>
+                        <button id="add-order">Add application...</button>
+                </section>
+		    </article>		
+	    </section>
+    </div>
+    <div id="footer">
+    </div>
+</div>
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
