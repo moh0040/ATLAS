@@ -23,7 +23,6 @@ body
 background-color: #505050;
 }
 
-
 #logo_text h1, #logo_text h1 a, #logo_text h1 a:hover 
 { padding: 0px 0 0 0;
   color: #A8AA94;
@@ -32,7 +31,6 @@ background-color: #505050;
 
 #logo_text h1 
 { color: #FFF;}
-
 
 #menubar
 { height: 46px;
@@ -88,13 +86,27 @@ ul#menu li a:hover
   color: #FFF;
   background-color:#2E2E2E;
 }
-#get_app{
+#get_app
+{
   margin: 0px auto 0 -8px;
   float:left;
   background-color:#DFDFDF;
   width: 420px;
   height: 300px;
-  } 
+} 
+
+#sec
+{
+width:200px;
+margin: 10px 68px 0px 0px;
+background-color:#CEECF5;
+}
+#fir
+{
+width:200px;
+margin: 10px 68px 0px 0px;
+background-color:#FFF;
+}
 
 #get_schema{
   margin: 0px auto 0 -8px;
@@ -213,12 +225,31 @@ margin: 12px 0px 0px 10px;
 margin: -26 px 0px 20px 117px;
 font-size:20px;
 }
+
 #lable_app2
 {
 margin: 2px 0px -13px 124px;
 font-size:20px;
 }
 
+.button {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 #add_applic
 {
 margin: 0px 0px 0px 35px;
+
+
+
+
+
