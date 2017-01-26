@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <html>
-
 <head>
   <title>ATLAS</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
@@ -8,8 +7,8 @@
 <body>
   <div id="main">
     <div id="header">
-        <div id="logo_text">
-          <h1><a href="index.html">ATLAS</a></h1>
+      <div id="logo_text">
+        <h1><a href="index.html">ATLAS</a></h1>
     </div>
       <div id="menubar">
         <ul id="menu">
@@ -18,39 +17,48 @@
         </ul>
       </div>
     </div>
-    <div id="site_content">
-    <div id="get_schema">
-          <h2 id ="sn1">schema's Name</h2>
-          <h2 id ="sn2">schema's version</h2><br><br>
-          <select id="table_schema" size="10"></select>
-          <select id="table_version" size="10"></select>
-    </div><hr>
-    <div id="show_schema">  
-        <textarea id="myTextArea" cols=80 rows=50></textarea>
-    </div><hr>
-        <div id="get_schema">
-          <p  id ="lable_schema">schema's Name</p><br><br>
-          <select id="table_schema" size="10"></select>
-          <select id="table_version" size="10"></select>
-    </div><hr>
-    <div id="add_schema">  
-          <p id ="lable_sch2">Add Schema </p><br><br> 
-          <label >Name_achema: </label>
-          <input id="Name_s" type="text" placeholder="Type name of schema" required >
-          <button class="but_s" id="add-schema" class="w3-btn w3-dark-grey">Add Schema</button><br><br>
-          <label >Version schema:</label>
-          <input id="version"  type="text" placeholder="Type Version" required><br><br>
-          <p><span>Schema:</span><textarea class="contact textarea" rows="8" cols="50" name="your_enquiry"></textarea></p>
-    </div><hr>
-
-  </div>
-    <div id="footer">
-      <label id="note1"> Note: <span id="note2"></span><span id="note3"></span><span id="note4"></span>
-      <span id="note5"></span><span id="note6"></span><span id="note7"></span></lable> <br></br>
-
+<!-- //////////////////////////////site-content//////////////////////////-->
+    <div id="site_content"><div><br>
+        <h2>schema information</h2><hr>
+          <select id="fir">
+            <option selected value="base">Please Select</option>
+          </select><br> 
+        <select id="sec" size="5"></select>
     </div>
+<!-- //////////////////////////////show schema//////////////////////////-->
+    <div id="ShowSchema"><br><br>  
+        <h2>Original schema</h2><hr>
+        <p><span></span><textarea id="myTextArea" rows="20" cols="60" name="your_enquiry"></textarea></p>
+    </div>
+    <div>
+      <button class="button button5" id="btn" type="button" data-confirm="Are you sure you want to click the button?">save changes</button>
+    </div><br><br>
+<!-- //////////////////////////////state//////////////////////////-->
+    <div id="state">
+        <h2>State</h2><hr>
+        <button class="button button1">DRAFT</button>
+        <button class="button button2">PUBLISHED</button>
+        <button class="button button3">DEPRECATED</button>
+        <button class="button button4">INVALID</button>
+    <h2>Transition state (do you want to improve one level state of schema?)</h2>
+      <button class="button button7">Transition state</button>
+    </div>
+<!-- //////////////////////////////add schema//////////////////////////-->
+    <div id="add_schema"> <br>
+    <h2>Add Schema</h2><hr> 
+        <label >version of schema : </label><input id="VersionSchema" type="number" min="1" max="20" /><br>
+          <label >Body of schema:</label>
+            <p><textarea id="TextAreaSchema" rows="25" cols="50" name="your_enquiry"></textarea></p>
+          <button class="button button8">Submit Schema</button>
+        <div id ="test">Note:</div><hr><br><br>
+    </div><hr>
+</div>
+<!-- //////////////////////////////end of site content//////////////////////////-->
+    <div id="footer">
+    </div>
+<!-- //////////////////////////////end of main//////////////////////////-->
+</div>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="script2.js"></script>
 </body>
 </html>
