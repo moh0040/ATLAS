@@ -22,8 +22,11 @@ $(document).ready(function(e) {
 			type: 'GET',
 			url:'http://gate.atlascon.cz:9999/rest/a/'+middle+'/namespace',
 			success:function(data2){
-				$('#text').html("<h3>"+data2 +"</h3>");
-				$('#note4').html( "<span style=color:#F5F5F5;font-weight:bold>"+ data2 +"</span>  has been selected as NameSpace of Application....");
+
+     		$("#tbl_S").html("<option>"+data2+"</option>");
+
+
+			  $('#note4').html( "<span style=color:#F5F5F5;>"+ data2 +"</span>  has been selected as NameSpace of Application....");
 			},
 			error: function() {
 				$('#note5').html('error loading Name Space!');
@@ -42,7 +45,7 @@ $(document).ready(function(e) {
       		url: 'http://gate.atlascon.cz:9999/rest/a/'+ name+"/"+name_space ,
       		contentType: "application/json",
       		success: function(NewApp) {
-			$('#note6').html( NewApp + " are succcessfully sended to server...");
+			$('#note6').html( "data are succcessfully sended to server...");
       		},
       		error: function() {
       		$('#note7').html("Error in Posting data to server!");
@@ -50,10 +53,6 @@ $(document).ready(function(e) {
 	    	},
     	});
 	});
-
-
-
-
 
 });
 
