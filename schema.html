@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>ATLAS</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <div id="main">
+    <div id="header">
+        <div id="logo_text">
+          <h1><a href="index.html">ATLAS</a></h1>
+    </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li ><a href="index.html">Application</a></li>
+          <li class="selected"><a href="schema.html">Schema</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+    <div id="get_schema">
+          <h2 id ="sn1">schema's Name</h2>
+          <h2 id ="sn2">schema's version</h2><br><br>
+          <select id="table_schema" size="10"></select>
+          <select id="table_version" size="10"></select>
+    </div><hr>
+    <div id="show_schema">  
+        <textarea id="myTextArea" cols=80 rows=50></textarea>
+    </div><hr>
+        <div id="get_schema">
+          <p  id ="lable_schema">schema's Name</p><br><br>
+          <select id="table_schema" size="10"></select>
+          <select id="table_version" size="10"></select>
+    </div><hr>
+    <div id="add_schema">  
+          <p id ="lable_sch2">Add Schema </p><br><br> 
+          <label >Name_achema: </label>
+          <input id="Name_s" type="text" placeholder="Type name of schema" required >
+          <button class="but_s" id="add-schema" class="w3-btn w3-dark-grey">Add Schema</button><br><br>
+          <label >Version schema:</label>
+          <input id="version"  type="text" placeholder="Type Version" required><br><br>
+          <p><span>Schema:</span><textarea class="contact textarea" rows="8" cols="50" name="your_enquiry"></textarea></p>
+    </div><hr>
+
+  </div>
+    <div id="footer">
+      <label id="note1"> Note: <span id="note2"></span><span id="note3"></span><span id="note4"></span>
+      <span id="note5"></span><span id="note6"></span><span id="note7"></span></lable> <br></br>
+
+    </div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="script2.js"></script>
+</body>
+</html>
