@@ -1,5 +1,6 @@
-//////////////////////Get name///////////////////////////////////////////
-$(function() {
+
+$(document).ready(function(e) {
+//////////////////////////////////////////Get name
 	$.ajax({
    		type: 'GET',
    		url: 'http://gate.atlascon.cz:9999/rest/a/listNames',
@@ -10,12 +11,10 @@ $(function() {
      		$('#note2').html( "Name of Applications are loaded....");
    		},
    	  	error: function() {
-   	     $('#note3').html('error loading listNames!');
+   	    $('#note3').html('error loading listNames!');
     	},
 	});
-//////////////////////Get name space///////////////////////////////////////////
-
-$(document).ready(function(e) {
+///////////////////////////////////////////////////Get name space
   $('#tbl').on("change", function() {
         var middle =$("#tbl").val();
 		$.ajax({
@@ -33,10 +32,7 @@ $(document).ready(function(e) {
 	    	},
 		});
 	});
-
-  });
-
-//////////////////////////post(name and namespace)/////////////////////////////////////////////
+///////////////////////////////////////////////////post(name and namespace)
  	$('#add-applic').on('click', function() {
 	 	var name = $('#Name').val();
 	 	var name_space = $('#NameSpace').val();
@@ -49,10 +45,9 @@ $(document).ready(function(e) {
       		},
       		error: function() {
       		$('#note7').html("Error in Posting data to server!");
-	        	
 	    	},
     	});
 	});
-
+////////////////////////////////////////end
 });
 
