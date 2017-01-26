@@ -13,12 +13,12 @@ body
   margin-right: auto;}
 
 #main
-{ width: 950px;
+{ width: 1024px;
   margin: 20px auto;
 }
 
 #header
-{ width: 950px;
+{ width: 1024px;
   height: 121px;
 background-color: #505050;
 }
@@ -36,7 +36,7 @@ background-color: #505050;
 
 #menubar
 { height: 46px;
-  width: 950px;
+  width: 1024px;
   margin: 45px auto 0 auto;
   background-color: #2E2E2E;} 
 
@@ -81,7 +81,7 @@ ul#menu li a:hover
   border-bottom: 0;
 } 
 #footer
-{ width: 950px;
+{ width: 1024px;
   font: normal 90% 'trebuchet ms',  arial, sans-serif;
   height: 25px;
   padding: 20px 0 5px 0;
@@ -93,8 +93,22 @@ ul#menu li a:hover
   float:left;
   background-color:#DFDFDF;
   width: 420px;
-  height: 200px;
+  height: 300px;
   } 
+
+#get_schema{
+  margin: 0px auto 0 -8px;
+  float:center;
+  background-color:#DFDFDF;
+  width: 100%;
+  height: 100%;
+  } 
+
+#table_version{
+  margin: -82px 103px 0 -65px;
+  background-color:#CEECF5;
+  width: 94px;
+  }
 #add_app
 {
   margin: 0px 20px 0 auto;
@@ -104,6 +118,15 @@ ul#menu li a:hover
   width: 420px;
   height: 200px;    
   }
+#add_schema
+{
+  margin: 0px 20px 0 auto;
+  padding-top: 0px;
+  float:right;
+  background-color: #DFDFDF;
+  width: 100%;
+  height: 100%px;
+}
 #inside
 {
   background-color: red;
@@ -114,18 +137,21 @@ ul#menu li a:hover
 #note1
 {
 margin: 0px 0px 0px 15px;
+font-size: 18px;
 }
 
 #note2, #note4, #note6
 {
 color: #9EFF00;
-font-weight: 900;
+
+font-size: 15px;
 }
 
 #note3, #note5, #note7
 {
 color: red;
-font-weight: 900;
+
+font-size: 15px;
 }
 
 #get
@@ -133,11 +159,34 @@ font-weight: 900;
 width: 250 px;
 
 }
+#sn1{
+margin: 0px 0px -20px 250px;
+  width: 200px;
+  height: 20px; 
+}
+#sn2{
+margin: 0px 0px 0px 460px;
+  width: 200px;
+  height: 20px; 
+}
 
 #tbl
 {
-width:250px;
+width:350px;
 margin: -16px 68px 0px 0px;
+}
+#tbl_S
+{
+width:350px;
+margin: -16px 68px 0px 0px;
+background-color:#CEECF5;
+}
+
+
+#table_schema
+{
+width:314px;
+margin: -16px 60px 0px 182px;
 }
 
 #text
@@ -173,13 +222,3 @@ font-size:20px;
 #add_applic
 {
 margin: 0px 0px 0px 35px;
-
-
-fieldset 
-{
-  font-size:12px;
-  padding:10px 0px 0px 0px;
-  width:200px;
-  line-height:1.8;
-}
-
