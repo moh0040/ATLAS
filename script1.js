@@ -20,7 +20,7 @@ $(document).ready(function(e) {
 			type: 'GET',
 			url:'http://gate.atlascon.cz:9999/rest/a/'+middle+'/namespace',
 			success:function(data2){
-     		    $("#tbl_S").html("<option>"+data2+"</option>");
+     		    document.getElementById('tbl_S').value = data2;
 			    $('#note4').html( "<span style=color:#F5F5F5;>"+ data2 +"</span>  has been selected as NameSpace of Application....");
 			},
 			error: function() {
