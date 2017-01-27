@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>ATLAS</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo_text">
+        <h1><a href="index.html">ATLAS</a></h1>
+    </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li class="selected"><a href="index.html">Application</a></li>
+          <li><a href="schema.html">Schema</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+    <div id="get_app">
+          <h2>Application's Info</h2><br><hr><br><br>
+          <P id ="nameP">Name App</P>
+          <select id="tbl" size="8"></select>
+          <div >Name Space </div>
+          <p>Name Space</p>
+          <select id="tbl_S" size="2" ></select>
+        <div id="text"></div>
+    </div>
+    <div id="add_app">  
+          <h2>Add Application </h2><br><hr><br><br><br>
+          <label >Name App: </label>
+          <input id="Name" type="text" placeholder="Type Name App" required >
+          <button class="button button6">Submit</button><br><br>
+          <label >Name Space:</label>
+          <input id="NameSpace"  type="text" placeholder="Type NameSpace" required><br><br>
+    </div>
+  </div>
+    <div id="footer">
+      <label id="note1"> Note: <span id="note2"></span><span id="note3"></span><span id="note4"></span>
+      <span id="note5"></span><span id="note6"></span><span id="note7"></span></lable> <br></br> 
+ </div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="script1.js"></script>
+</body>
+</html>
