@@ -379,6 +379,31 @@ margin: 0px 0px 0px 35px;
 }
 
 
+/*--select option style--*/
+select {
+    border: 1px solid #d6d8db;
+    background-color: #ecedee;
+    color: #47515c;
+    padding: 12px 10px 12px 10px;
+    width: auto;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+select > option {
+    padding: 5px 0px;
+}
+.customSelect {
+    border: 1px solid #d6d8db;
+    background-color: #ecedee;
+    color: #47515c;
+    padding: 12px 10px 12px 10px;
+    margin-bottom: 10px;
+}
+.customSelect.changed {
+    background-color: #f0dea4;
+}
+
+
 
 
 
