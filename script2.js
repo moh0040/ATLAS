@@ -5,29 +5,29 @@ $(document).ready(function(e) {
       url: 'http://gate.atlascon.cz:9999/rest/s/listSchemaNames',
       success: function(data) {
         for (var i = 0; i < data.length; i++) {
-        $("#fir").append("<option>"+data[i]+"</option>");
+            $("#fir").append("<option>"+data[i]+"</option>");
         }
-        $('#note22').html( "Name of Schema are loaded....");
+            $('#note22').html( "Name of Schema are loaded....");
       },
         error: function() {
-        $('#note33').html('error loading schema name!');
+            $('#note33').html('error loading schema name!');
       },
   });
 /////////////////////////////////////////////getting the version of schema
   $('#fir').on("change", function() {
         var schem =$("#fir").val();
                 $.ajax({
-                  type: 'GET',
-                  url:'http://gate.atlascon.cz:9999/rest/s/listVersions/'+schem,
-                  success:function(data2){
-                    $("#sec").empty();
+                    type: 'GET',
+                    url:'http://gate.atlascon.cz:9999/rest/s/listVersions/'+schem,
+                    success:function(data2){
+                        $("#sec").empty();
                     for (var i = 0; i < data2.length; i++) {
-                    $("#sec").append("<option>"+data2[i]+"</option>");
+                        $("#sec").append("<option>"+data2[i]+"</option>");
                     }
-                    $('#note44').append( "<span style=color:#F5F5F5;font-weight:bold>"+ data2 +"</span>  has been selected as version of Schema....");
-                  },
-                  error: function() {
-                    $('#note55').html('error loading version!');
+                        $('#note44').append( "<span style=color:#F5F5F5;font-weight:bold>"+ data2 +"</span>  has been selected as version of Schema....");
+                    },
+                    error: function() {
+                        $('#note55').html('error loading version!');
                     },
                 });
   });
@@ -40,16 +40,16 @@ $('#sec').on("change", function() {
         type: 'GET',
         url:'http://gate.atlascon.cz:9999/rest/s/original/'+one+"/"+two,
         success:function(data3){
-        var str = JSON.stringify(data3, undefined, 4);
-        $("#myTextArea").html(str);
-        $('#test2').html( "Note: Schema succcessfully loaded from server...");
-        $('#note66').html( "Schema has loaded into textarea....");
+            var str = JSON.stringify(data3, undefined, 4);
+            $("#myTextArea").html(str);
+            $('#test2').html( "Note: Schema succcessfully loaded from server...");
+            $('#note66').html( "Schema has loaded into textarea....");
         },
-          error: function() {
-          $('#test3').html( "error for loading from server...");
-          $("#myTextArea").empty();
-          $('#note77').html('error loading Schema text!');
-          },
+        error: function() {
+            $('#test3').html( "error for loading from server...");
+            $("#myTextArea").empty();
+            $('#note77').html('error loading Schema text!');
+        },
       });                        
 ///////////////////////////////////////////////////////state of schema
   $.ajax({
@@ -60,20 +60,20 @@ $('#sec').on("change", function() {
         var b="PUBLISHED";
         var c="DEPRECATED";
         var d="INVALID";
-            $(".button1, .button2, .button3, .button4").css('background-color', '#555555');
-            if (data4==a) {
-              $(".button1").css('background-color', '#01DF01');
-            }else if(data4==b){
-                $(".button2").css('background-color', '#088A29');
-            }else if(data4==c){
-                $(".button3").css('background-color', '#FFA200');
-            }else if(data4==d){
-                $(".button4").css('background-color', '#FF0000');
-            }
-        $('#note88').html('State successfully selected ....');
+        $(".button1, .button2, .button3, .button4").css('background-color', '#555555');
+        if (data4==a) {
+            $(".button1").css('background-color', '#01DF01');
+        }else if(data4==b){
+            $(".button2").css('background-color', '#088A29');
+        }else if(data4==c){
+            $(".button3").css('background-color', '#FFA200');
+        }else if(data4==d){
+            $(".button4").css('background-color', '#FF0000');
+        }
+            $('#note88').html('State successfully selected ....');
       },
-        error: function() {
-        $('#note99').html('error loading state!');
+      error: function() {
+            $('#note99').html('error loading state!');
       },
   });
 });
