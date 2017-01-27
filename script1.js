@@ -1,4 +1,3 @@
-
 $(document).ready(function(e) {
 //////////////////////////////////////////Get name
 	$.ajax({
@@ -6,12 +5,12 @@ $(document).ready(function(e) {
    		url: 'http://gate.atlascon.cz:9999/rest/a/listNames',
    		success: function(data) {
    			for (var i = 0; i < data.length; i++) {
-     		$("#tbl").append("<option>"+data[i]+"</option>");
+     		    $("#tbl").append("<option>"+data[i]+"</option>");
      		}
-     		$('#note2').html( "Name of Applications are loaded....");
+     		    $('#note2').html( "Name of Applications are loaded....");
    		},
    	  	error: function() {
-   	    $('#note3').html('error loading listNames!');
+   	        $('#note3').html('error loading listNames!');
     	},
 	});
 ///////////////////////////////////////////////////Get name space
@@ -21,11 +20,11 @@ $(document).ready(function(e) {
 			type: 'GET',
 			url:'http://gate.atlascon.cz:9999/rest/a/'+middle+'/namespace',
 			success:function(data2){
-     		$("#tbl_S").html("<option>"+data2+"</option>");
-			  $('#note4').html( "<span style=color:#F5F5F5;>"+ data2 +"</span>  has been selected as NameSpace of Application....");
+     		    $("#tbl_S").html("<option>"+data2+"</option>");
+			    $('#note4').html( "<span style=color:#F5F5F5;>"+ data2 +"</span>  has been selected as NameSpace of Application....");
 			},
 			error: function() {
-				$('#note5').html('error loading Name Space!');
+			    $('#note5').html('error loading Name Space!');
 	    	},
 		});
 	});
@@ -42,7 +41,7 @@ $(document).ready(function(e) {
 			    $('#note6').html( "data are succcessfully sended to server...");
       		},
       		error: function() {
-      		$('#note7').html("Error in Posting data to server!");
+      		    $('#note7').html("Error in Posting data to server!");
 	    	},
     	});
     };
