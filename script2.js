@@ -105,7 +105,7 @@ var VerSchem = $('#sec').val();
 $(".button7").on('click', function() {
     var SchemName = $('#fir').val();
     var VerSchem = $('#sec').val();
-    if (confirm('Do you want to change teh state of schema ?')) {
+    if (confirm('Do you want to change the state of schema ?')) {
         $.ajax({
           type: 'POST',
           url: 'http://gate.atlascon.cz:9999/rest/s/stateTransition/'+ SchemName+"/"+VerSchem,
