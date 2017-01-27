@@ -117,9 +117,6 @@ ul#menu li a:hover
   background-color:#2E2E2E;
 }
 
-
-
-
 #get_app
 {
   margin: 0px auto 0 -8px;
@@ -128,8 +125,6 @@ ul#menu li a:hover
   width: 420px;
   height: 300px;
 } 
-
-
 
 #get_schema{
   margin: 0px auto 0 -8px;
@@ -167,7 +162,7 @@ ul#menu li a:hover
   background-color: red;
   width: 40px;
   height: 20px;   
-  }
+}
 
 .note1
 {
@@ -194,59 +189,53 @@ color: red;
 
 font-size: 11px;
 }
-    #S1{  
-  width: 980px;
-  height: 400px;
+#S1{
+width: 980px;
+height: 400px;
 
-    }
-  #S11{  
-  width: 480px;
-  height: 400px;
-  float: left;
+}
+#S11{
+width: 480px;
+height: 400px;
+float: left;
 
-    }
-  #S12{  
-  width: 500px;
-  height: 400px;
-  float: right;
+}
+#S12{
+width: 500px;
+height: 400px;
+float: right;
 
-    }
-      #S2{  
-  width: 980px;
-  height: 100px;
-  float:left;
-
-    }
-  #S3{  
-  width: 980px;
-  height: 550px;
-
-    }
+}
+#S2{
+width: 980px;
+height: 100px;
+float:left;
+}
+#S3{
+width: 980px;
+height: 550px;
+}
     
-    #S31{
-  width: 980px;
-  height: 50px;
-  float:right;
-
-    }
-        #S32{
-  width: 400px;
-  height: 400px;
-  float:right;
-
-    }
+#S31{
+width: 980px;
+height: 50px;
+float:right;
+}
+#S32{
+width: 400px;
+height: 400px;
+float:right;
+}
 #S33{
-  width: 580px;
-  height: 400px;
-  float:left;
-
-    }
+width: 580px;
+height: 400px;
+float:left;
+}
 #sec
 {
 width:400px;
 margin: 10px 68px 0px 0px;
 background-color:#CEECF5;
-  
 }
 #fir
 {
@@ -260,7 +249,6 @@ float: right;
 width: 380px;
 height: 50px;
 margin-top: 220px;
-      
 }
 #VersionSchema{
 float: right;
@@ -271,7 +259,6 @@ margin-top: 0px;
 #get
 {
 width: 250 px;
-
 }
 #sn1{
 margin: 0px 0px -20px 250px;
@@ -376,11 +363,10 @@ margin-top: 130px;
 #nameP{
 margin: 0px 0px 20px 0px;
 
-
 }
 #add_applic
 {
 margin: 0px 0px 0px 35px;
-
+}
 
 
