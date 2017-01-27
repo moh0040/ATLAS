@@ -103,39 +103,39 @@ var VerSchem = $('#sec').val();
 });
 //////////////////////////////////////Transition
 $(".button7").on('click', function() {
-var SchemName = $('#fir').val();
-var VerSchem = $('#sec').val();
+    var SchemName = $('#fir').val();
+    var VerSchem = $('#sec').val();
     if (confirm('Do you want to change teh state of schema ?')) {
-      $.ajax({
+        $.ajax({
           type: 'POST',
           url: 'http://gate.atlascon.cz:9999/rest/s/stateTransition/'+ SchemName+"/"+VerSchem,
           contentType: "application/json",
           success: function(data5) {
-          $('#note102').html( "Transition was succcessfull...");
+                $('#note102').html( "Transition was succcessfull...");
           },
           error: function() {
-          $('#note103').html("Error in Transition!");    
+                $('#note103').html("Error in Transition!");
           },
       });
     };//end of if condition
 }); 
 ////////////////////////////////////// adding new schema (error 500 on both side but works)
-  $(".button8").on('click', function() {
+$(".button8").on('click', function() {
     if (confirm('Are you sure ?')) {
-    var version = $('#VersionSchema').val();
-    var SchemaText2 = $('#TextAreaSchema').val();
-      $.ajax({
+        var version = $('#VersionSchema').val();
+        var SchemaText2 = $('#TextAreaSchema').val();
+        $.ajax({
           type: 'PUT',
           url: 'http://gate.atlascon.cz:9999/rest/s/'+ version,
           data:SchemaText2,
           contentType: "application/json",
           success: function(NewApp2) {
-            $('#test').html( "New Schema succcessfully upload to server...");
+                $('#test').html( "New Schema succcessfully upload to server...");
           },
           error: function() {
-            $('#test5').html("Error in Posting new schema to server!");    
+                $('#test5').html("Error in Posting new schema to server!");
           },
-      });
+        });
     };
   });
 ////////////////////////////////////////end
