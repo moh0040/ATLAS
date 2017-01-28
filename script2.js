@@ -34,52 +34,52 @@ $(document).ready(function(e) {
 /////////////////////////////////////////////loading text schema into textarea
 $('#fir').on("change", function() {
 $('#sec').on("change", function() {
-      var one =$("#fir").val();
-      var two =$("#sec").val();
-      $.ajax({
-            type: 'GET',
-            url:'http://gate.atlascon.cz:9999/rest/s/original/'+one+"/"+two,
-            success:function(data3){
-            var str = JSON.stringify(data3, undefined, 4);
-                $("#myTextArea").html(str);
-                $('#test2').html( "Note: Schema succcessfully loaded from server...");
-                $('#note66').html( "Schema has loaded into textarea....");
-            },
-            error: function() {
-                $('#test3').html( "error for loading from server...");
-                $("#myTextArea").empty();
-                $('#note77').html('error loading Schema text!');
-            },
-      });                        
-///////////////////////////////////////////////////////state of schema
-  $.ajax({
-      type: 'GET',
-      url:'http://gate.atlascon.cz:9999/rest/s/state/'+one+"/"+two,
-      success: function(data4) {
-            var a="DRAFT";
-            var b="PUBLISHED";
-            var c="DEPRECATED";
-            var d="INVALID";
-            $(".button1, .button2, .button3, .button4").css('background-color', '#555555');
-            if (data4==a) {
-                $(".button1").css('background-color', '#01DF01');
-            }else if(data4==b){
-                $(".button2").css('background-color', '#088A29');
-            }else if(data4==c){
-                $(".button3").css('background-color', '#FFA200');
-            }else if(data4==d){
-                $(".button4").css('background-color', '#FF0000');
-            }
-                $('#note88').html('State successfully selected ....');
-      },
-      error: function() {
-            $('#note99').html('error loading state!');
-      },
-  });
+              var one =$("#fir").val();
+              var two =$("#sec").val();
+              $.ajax({
+                    type: 'GET',
+                    url:'http://gate.atlascon.cz:9999/rest/s/original/'+one+"/"+two,
+                    success:function(data3){
+                    var str = JSON.stringify(data3, undefined, 4);
+                        $("#myTextArea").html(str);
+                        $('#test2').html( "Note: Schema succcessfully loaded from server...");
+                        $('#note66').html( "Schema has loaded into textarea....");
+                    },
+                    error: function() {
+                        $('#test3').html( "error for loading from server...");
+                        $("#myTextArea").empty();
+                        $('#note77').html('error loading Schema text!');
+                    },
+              });
+
+//////////////////////////////////////////////////////////////state of schema
+              $.ajax({
+                  type: 'GET',
+                  url:'http://gate.atlascon.cz:9999/rest/s/state/'+one+"/"+two,
+                  success: function(data4) {
+                        var a="DRAFT";
+                        var b="PUBLISHED";
+                        var c="DEPRECATED";
+                        var d="INVALID";
+                        $(".button1, .button2, .button3, .button4").css('background-color', '#555555');
+                        if (data4==a) {
+                            $(".button1").css('background-color', '#01DF01');
+                        }else if(data4==b){
+                            $(".button2").css('background-color', '#088A29');
+                        }else if(data4==c){
+                            $(".button3").css('background-color', '#FFA200');
+                        }else if(data4==d){
+                            $(".button4").css('background-color', '#FF0000');
+                        }
+                            $('#note88').html('State successfully selected ....');
+                  },
+                  error: function() {
+                        $('#note99').html('error loading state!');
+                  },
+              });
 });
 });
 //////////////////////////////////////update schema (error 500 on bot side but works)
-
 $(".button5").on('click', function() {
 var SchemName = $('#fir').val();
 var VerSchem = $('#sec').val();
@@ -118,7 +118,7 @@ $(".button7").on('click', function() {
             },
       });
     };//end of if condition
-}); 
+});
 ////////////////////////////////////// adding new schema (error 500 on both side but works)
 $(".button8").on('click', function() {
     if (confirm('Are you sure ?')) {
