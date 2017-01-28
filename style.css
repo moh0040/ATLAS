@@ -167,26 +167,31 @@ color: red;
 font-size: 11px;
 }
 #S1{
-width: 980px;
-height: 400px;
+width: 1000px;
+height: 200px;
+background-color:red;
 
 }
 #S11{
-width: 480px;
-height: 400px;
+width: 380px;
+height: 200px;
 float: left;
-
+background-color:blue;
 }
+
+
 #S12{
-width: 500px;
-height: 400px;
+width: 580px;
+height: 200px;
 float: right;
+background-color:green;
 
 }
 #S2{
-width: 980px;
-height: 130px;
+width: 1000px;
+height: 400px;
 float:left;
+background-color:yellow;
 }
 #S3{
 width: 980px;
@@ -210,14 +215,16 @@ float:left;
 }
 #sec
 {
-width:400px;
-margin: 10px 68px 0px 0px;
-background-color:#CEECF5;
+width:350px;
+height: 40px;
+margin: -16px 68px 0px 0px;
+background-color:#FFF;
 }
 #fir
 {
-width:400px;
-margin: 10px 68px 0px 0px;
+width:350px;
+height:42px;
+margin: -12px 68px 0px 0px;
 background-color:#FFF;
 }
 
@@ -253,7 +260,7 @@ height: 20px;
     width: 350px;
     height: 42px;
     margin: -12px 68px 0px 0px;
-    background-color: #CEECF5;
+    background-color: #FFF;
 }
 #Name
 {
@@ -261,7 +268,7 @@ height: 20px;
     width: 350px;
     height: 40px;
     margin: -16px 68px 0px 0px;
-    background-color: #CEECF5;
+    background-color: #FFF;
 
 }
 #tbl_S
@@ -269,14 +276,14 @@ height: 20px;
 width:350px;
 height: 40px;
 margin: -16px 68px 0px 0px;
-background-color:#CEECF5;
+background-color:#FFF;
 }
 #NameSpace
 {
 width:350px;
 height: 40px;
 margin: -16px 68px 0px 0px;
-background-color:#CEECF5;
+background-color:#FFF;
 }
 
 
@@ -314,12 +321,12 @@ font-size:20px;
 background-color: #555555;
 border: none;
 color: white;
-padding: 15px 32px;
+padding: 13px 32px;
 text-align: center;
 text-decoration: none;
 display: inline-block;
-font-size: 16px;
-margin: 4px 2px;
+font-size: 15px;
+margin: 1px 2px;
 
 }
 .button5{
@@ -334,7 +341,7 @@ cursor: pointer;
 float: right;
 background-color:#242424;
 width:120px;
-height: 50px;
+height: 45px;
 border-bottom:groove;
 margin-top: 34px;
 cursor: pointer;
@@ -342,9 +349,11 @@ cursor: pointer;
 .button7{
 float: right;
 background-color:#242424;
-width:200px;
-height: 50px;
+width:120px;
+height: 45px;
 border-bottom:groove;
+margin-top: 34px;
+margin-right:244px;
 cursor: pointer;
 }
 .button8{
@@ -404,6 +413,7 @@ select > option {
 
 input[type="text"] {
     font-size:15px;
+    color: #47515c;
 }
 
 
