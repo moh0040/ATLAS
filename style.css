@@ -146,50 +146,32 @@ width:1024px;
 margin: 0px 0px 0px 15px;
 font-size: 18px;
 }
-#test2{
-  color:#0A9100;
-}
 
-#note2, #note4, #note6, #note22, #note33, #note44,
-#note66, #note88, #note100, #note102, #test1,
-#test
-{
-color: #9EFF00;
 
-font-size: 11px;
-}
 
-#note3, #note5, #note7,#note55, #note101, #note103,
-#test3, #test4, #test5
-{
-color: red;
-
-font-size: 11px;
-}
 #S1{
 width: 1000px;
-height: 200px;
-background-color:red;
+height: 250px;
+background-color:#F2F2F2;
 
 }
 #S11{
-width: 380px;
-height: 200px;
+width: 370px;
+height: 220px;
 float: left;
-background-color:blue;
+background-color:#F2F2F2;
 }
 
 
 #S12{
-width: 580px;
-height: 200px;
+width: 500px;
+height: 220px;
 float: right;
-background-color:green;
+background-color:#F2F2F2;
 
 }
 #S2{
 width: 1000px;
-height: 400px;
 float:left;
 background-color:yellow;
 }
@@ -217,14 +199,14 @@ float:left;
 {
 width:350px;
 height: 40px;
-margin: -16px 68px 0px 0px;
+margin: 3px 68px 0px 0px;
 background-color:#FFF;
 }
 #fir
 {
 width:350px;
 height:42px;
-margin: -12px 68px 0px 0px;
+margin: 3px 68px 0px 0px;
 background-color:#FFF;
 }
 
@@ -278,6 +260,16 @@ height: 40px;
 margin: -16px 68px 0px 0px;
 background-color:#FFF;
 }
+
+#tbl_S2
+{
+width:350px;
+height: 40px;
+margin: 3px 68px 17px 0px;
+background-color:#FFF;
+}
+
+
 #NameSpace
 {
 width:350px;
@@ -321,19 +313,20 @@ font-size:20px;
 background-color: #555555;
 border: none;
 color: white;
-padding: 13px 32px;
+padding: 13px 22px;
 text-align: center;
 text-decoration: none;
 display: inline-block;
 font-size: 15px;
-margin: 1px 2px;
+margin: 17px 2px;
 
 }
 .button5{
 float: right;
 background-color:#242424;
-width:200px;
-height: 50px;
+width:120px;
+height: 45px;
+margin: -58px 521px 0px 0px;
 border-bottom:groove;
 cursor: pointer;
 }
@@ -352,8 +345,8 @@ background-color:#242424;
 width:120px;
 height: 45px;
 border-bottom:groove;
-margin-top: 34px;
-margin-right:244px;
+margin-top: 29px;
+margin-right:197px;
 cursor: pointer;
 }
 .button8{
@@ -365,6 +358,27 @@ border-bottom:groove;
 margin-top: 30px;
 cursor: pointer;
 }
+
+.button9{
+float: right;
+background-color:#242424;
+width:120px;
+height: 45px;
+border-bottom:groove;
+margin-top: -60px;
+margin-right:521px;
+cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
 
 #nameP{
 margin: 0px 0px 21px 0px;
@@ -416,4 +430,12 @@ input[type="text"] {
     color: #47515c;
 }
 
+textarea {
+margin: 4px 0px 0px 0px;
+}
 
+#vali{
+width: 250px;
+height: 60px;
+background-color:red;
+}
