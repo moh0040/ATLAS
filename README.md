@@ -8,6 +8,4 @@ Application Model:
 Pages:
 
 1) Application
-
-![applicationpage](https://cloud.githubusercontent.com/assets/22346328/22396364/3ac8518a-e558-11e6-9bc6-2926f750b43c.jpg)
-
+2) Schema
