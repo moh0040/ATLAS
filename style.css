@@ -8,108 +8,62 @@ body
 { font: normal .80em 'trebuchet ms', arial, sans-serif;
   background-color:#FAFAFA;
   }
-ul#menu
-{ float: left;
-  margin: 0;padding: 0;}
-
-ul#menu li
-{ float: left;
-  padding: 0 0 0 6px;
-  list-style: none;
-  margin: 0px 2px 0 0;}
-
-ul#menu li a
-{ font: normal 100% 'trebuchet ms', sans-serif;
-  display: block; 
-  float: left; 
-  height: 27px;
-  padding: 12px 28px 5px 22px;
-  text-align: center;
-  color: #FFF;
-  border-right: 1px solid #636363;
-  text-decoration: none;} 
-
-ul#menu li.tab_selected a
-{ height: 27px;
-  padding: 6px 28px 5px 22px;}
-
-ul#menu li.selected a, ul#menu li.selected a:hover
-{ color:black;}
-
-ul#menu li a:hover
-{ color:black;}
 
 #main, #header, #menubar, #site_content, #footer
 { margin-left: auto; 
   margin-right: auto;
-
   }
 
 #main
 {
   margin: 20px auto;
-
 }
 
 #header
 {
   height: 177px;
-  background-color:#424242;
+  background-color:#8B8B8B;
 }
 
 #logo {
     width: 880px;
     position: relative;
     height: 140px;
-    margin: 0px 0px 0px 300px;
-
-
+    margin: 0px 0px 0px 158px;
 }
 
 #menubar {
-      width: 1007px;
-      height: 46px;
-      background-color:#424242;
+  width: 1048px;
+  height: 38px;
+  padding: 0;
+  background-color:#BABABA;
 }
 
 
-ul#menu
+ul#menu, ul#menu li
 { float: left;
-  margin: 0;}
+  margin: 0;
+  padding: 0;}
 
 ul#menu li
-{ float: left;
-  padding: 0 0 0 9px;
-  list-style: none;
-  margin: 1px 2px 0 0;
-  background: transparent;}
+{ list-style: none;}
 
 ul#menu li a
-{ font: normal 100% 'trebuchet ms', sans-serif;
+{ letter-spacing: 0.1em;
+  font: normal 100% arial, sans-serif;
   display: block;
   float: left;
-  height: 20px;
-  padding: 6px 35px 5px 28px;
+  height: 12px;
+  padding: 13px 45px 12px 44px;
   text-align: center;
-  color: #FFF;
+  color: #000;
+  text-transform: uppercase;
   text-decoration: none;
   background: transparent;}
 
-ul#menu li.selected a
-{ height: 20px;
-  padding: 6px 35px 5px 28px;}
-
-ul#menu li.selected
-{ margin: 1px 2px 0 0;
-  background: #1C1C1C;}
-
-ul#menu li.selected a, ul#menu li.selected a:hover
-{ background: #1C1C1C;
-  color: #FFF;}
-
-ul#menu li a:hover
+ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
 { color: #FFF;
-  background: #1C1C1C;}
+  background: #626262;}
 
 #site_content
 {
