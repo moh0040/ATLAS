@@ -77,6 +77,7 @@ $('#fir').on("change", function() {
                             $(".button1").css('color', '#242424');
                             $(".button1").css('font-weight', 'bold');
                             $(".button7").prop("disabled",false);
+                            $(".button8").prop("disabled",false);
                         }else if(data4==b){
                             $(".button2").css('background-color', '#01DF01');
                             $(".button2").css('color', '#242424');
