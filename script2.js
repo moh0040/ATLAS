@@ -1,5 +1,6 @@
 $(document).ready(function(e) {
-/////////////////////////////////////getting schema name 
+/////////////////////////////////////getting schema name
+
   $.ajax({
       type: 'GET',
       url: 'http://gate.atlascon.cz:9999/rest/s/listSchemaNames',
@@ -14,14 +15,16 @@ $(document).ready(function(e) {
       },
   });
 /////////////////////////////////////////////getting the version of schema
+
   $('#fir').on("change", function() {
         var schem =$("#fir").val();
                 $.ajax({
                     type: 'GET',
                     url:'http://gate.atlascon.cz:9999/rest/s/listVersions/'+schem,
                     success:function(data2){
-                        $("#sec").empty();
+                             $("#sec").empty();
                         for (var i = 0; i < data2.length; i++) {
+
                             $("#sec").append("<option>"+data2[i]+"</option>");
                         }
                         $('#note44').append( "<span style=color:#F5F5F5;font-weight:bold>"+ data2 +"</span>  has been selected as version of Schema....");
@@ -30,12 +33,17 @@ $(document).ready(function(e) {
                         $('#note55').html('error loading version!');
                     },
                 });
-  });
+
+ });
+
+
 /////////////////////////////////////////////loading text schema into textarea
 $('#fir').on("change", function() {
 $('#sec').on("change", function() {
               var one =$("#fir").val();
               var two =$("#sec").val();
+              console.log(two);
+              $("#tbl_S2").val(two);
               $.ajax({
                     type: 'GET',
                     url:'http://gate.atlascon.cz:9999/rest/s/original/'+one+"/"+two,
@@ -138,6 +146,15 @@ $(".button8").on('click', function() {
         });
     };
   });
+
+
+//////////////////////////////////////schema version
+
+
+
+
+
+
 ////////////////////////////////////////end
 });
 

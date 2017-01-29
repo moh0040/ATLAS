@@ -173,7 +173,7 @@ background-color:#F2F2F2;
 #S2{
 width: 1000px;
 float:left;
-background-color:yellow;
+background-color:#F2F2F2;
 }
 #S3{
 width: 980px;
@@ -198,7 +198,7 @@ float:left;
 #sec
 {
 width:350px;
-height: 40px;
+height: 48px;
 margin: 3px 68px 0px 0px;
 background-color:#FFF;
 }
