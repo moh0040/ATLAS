@@ -142,7 +142,7 @@ $(".button7").on('click', function() {
 //////////////////////////////////////////////////////////////// adding new schema ()
 var $ver=$('#tbl_S2');
 var $tex=$('#myTextArea');
-var $orders=$('#id');
+var $orders=$('#d1');
 
 
 $(".button8").on('click', function() {
@@ -174,8 +174,8 @@ var order =
         "format": "int32"
       },
       {
-        "in": $tex.val(),
-        "name": "body",
+        "in": "path",
+        "name": $tex.val(),
         "required": false,
         "schema": {
           "type": "string"
@@ -195,11 +195,15 @@ var order =
         $.ajax({
             type: 'POST',
             url: 'http://gate.atlascon.cz:9999/rest/s/'+ $ver.val(),
+            //data:order,
             data:$tex.val(),
             contentType: "application/json",
             success: function(data4) {
 
-                $orders.append(data4.post.parameters[0].name);
+                console.log(data4);
+                //$orders.append(data4.post.parameters[0].name);
+                $orders.append(data4);
+                $("#fir").append("<option>"+data4+"</option>");
 
 
 
