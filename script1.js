@@ -29,6 +29,27 @@ $(document).ready(function(e) {
 		});
 	});
 ///////////////////////////////////////////////////post(name and namespace)
+
+    var $input = $('#Name,#NameSpace'),
+    $register = $('.button6');
+
+    $register.attr('disabled', true);
+    $input.keyup(function() {
+        var trigger = false;
+        $input.each(function() {
+            if (!$(this).val()) {
+            trigger = true;
+            }
+        });
+        trigger ? $register.attr('disabled', true) : $register.removeAttr('disabled');
+    });
+
+
+
+
+
+
+
  	$('.button6').on('click', function() {
 	 	var name = $('#Name').val();
 	 	var name_space = $('#NameSpace').val();
@@ -46,6 +67,8 @@ $(document).ready(function(e) {
     	});
     };
 });
+
+
 ////////////////////////////////////////end
 });
 
