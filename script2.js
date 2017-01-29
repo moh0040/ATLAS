@@ -82,17 +82,20 @@ $('#fir').on("change", function() {
                             $(".button2").css('color', '#242424');
                             $(".button2").css('font-weight', 'bold');
                             $(".button7").prop("disabled",false);
+                            $(".button8").prop("disabled",true);
                         }else if(data4==c){
                             $(".button3").css('background-color', '#FFA200');
                             $(".button3").css('color', '#242424');
                             $(".button3").css('font-weight', 'bold');
                             $(".button7").prop("disabled",false);
+                            $(".button8").prop("disabled",true);
                         }else if(data4==d){
                             $(".button4").css('background-color', '#FF0000');
                             $(".button4").css('color', '#242424');
                             $(".button4").css('font-weight', 'bold');
                             $(".button7").prop("disabled",true);
                             $(".button7").css('font-weight', 'normal');
+                            $(".button8").prop("disabled",true);
                         }
                   },
                   error: function() {
