@@ -34,6 +34,7 @@ $(function() {
 $(".button7").prop("disabled",true);
 $(".button7").css('font-weight', 'normal');
 $(".button9").prop("disabled",true);
+$(".button8").prop("disabled",true);
 
 
 $('#fir').on("change", function() {
