@@ -194,11 +194,11 @@ var order =
 
 
         var version = $('#tbl_S2').val();
-        //var SchemaText2 = $('#myTextArea').val();
+        var SchemaText2 = $('#myTextArea').val();
         $.ajax({
             type: 'POST',
             url: 'http://gate.atlascon.cz:9999/rest/s/'+ version,
-            data:order,
+            data:SchemaText2,
             contentType: "application/json",
             success: function(data4) {
 
