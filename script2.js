@@ -135,24 +135,81 @@ $(".button7").on('click', function() {
     };
 });
 //////////////////////////////////////////////////////////////// adding new schema ()
+var $ver=$('#tbl_S2');
+var $tex=$('#myTextArea');
+var $orders=$('#id');
+
+
 $(".button8").on('click', function() {
     if (confirm('Are you sure ?')) {
+
+
+
+
+
+var order =
+{
+  "post": {
+    "tags": [
+      "schemas"
+    ],
+    "operationId": "createUpdateSchema",
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "parameters": [
+      {
+        "name": $ver.val(),
+        "in": "path",
+        "required": true,
+        "type": "integer",
+        "format": "int32"
+      },
+      {
+        "in": $tex.val(),
+        "name": "body",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      }
+    ],
+    "responses": {
+      "default": {
+        "description": "successful operation"
+      }
+    }
+  }
+}
+
+
+
+
         var version = $('#tbl_S2').val();
-        var SchemaText2 = $('#myTextArea').val();
+        //var SchemaText2 = $('#myTextArea').val();
         $.ajax({
             type: 'POST',
             url: 'http://gate.atlascon.cz:9999/rest/s/'+ version,
-            data:SchemaText2,
+            data:order,
             contentType: "application/json",
-            success: function() {
-                 var id2=SchemaText2.namespace;
-                 var id3=SchemaText2.name;
-                 $("#fir").append("<option>"+id2+"."+id3+"</option>");
+            success: function(data4) {
+
+                $orders.append(data4.post.parameters[0].name);
+
+
+
+
             },
             error: function() {
                alert("error to add a new schema !");
             },
         });
+
+
+
     };
 });
 ///////////////////////////////////////////////////////////////////////////clean button
