@@ -28,7 +28,7 @@ $(document).ready(function(e) {
 	    	},
 		});
 	});
-///////////////////////////////////////////////////post(name and namespace)
+///////////////////////////////////////////////////disable and enable submit button
 
     var $input = $('#Name,#NameSpace'),
     $register = $('.button6');
@@ -45,7 +45,7 @@ $(document).ready(function(e) {
     });
 
 
-
+////////////////////////////////////////////////////////////////////post(name and namespace)
  	$('.button6').on('click', function() {
 	 	var name = $('#Name').val();
 	 	var name_space = $('#NameSpace').val();

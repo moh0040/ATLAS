@@ -237,7 +237,7 @@ $(".button9").on('click', function reset() {
 
        $('#myTextArea').val('');
 
-    $('input[type=number]').val('');
+       $('input[type=number]').val('');
 
     };
   });
