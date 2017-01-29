@@ -149,42 +149,6 @@ $('#sec').on("change", function() {
 
 
 
-
-
-
-
-
-
-
-/*
-
-//////////////////////////////////////update schema (error 500 on bot side but works)
-$(".button5").on('click', function() {
-var SchemName = $('#fir').val();
-var VerSchem = $('#sec').val();
-    if (confirm('Are you sure ?')) {
-    var SchemaText1 = $('#myTextArea').val();
-          $.ajax({
-              type: 'POST',
-              url: 'http://gate.atlascon.cz:9999/rest/s/updateDraft/'+ SchemName+"/"+VerSchem,
-              data:SchemaText1,
-              contentType: "application/json",
-              success: function(data5) {
-
-              $('#note100').html( "data are succcessfully post to server...");
-              },
-              error: function() {
-              $('#test4').html("Error in Posting data to server!");
-
-              },
-          });
-    };//end of if condition
-});
-
-
-*/
-
-
 //////////////////////////////////////Transition
 
 
@@ -209,6 +173,7 @@ $(".button7").on('click', function() {
 
 
 ////////////////////////////////////// adding new schema (error 500 on both side but works)
+
 $(".button8").on('click', function() {
     if (confirm('Are you sure ?')) {
         var version = $('#tbl_S2').val();
@@ -219,10 +184,14 @@ $(".button8").on('click', function() {
             data:SchemaText2,
             contentType: "application/json",
             success: function() {
-                console.log("new schema added");
+                                				var id2=SchemaText2.namespace;
+                                				var id3=SchemaText2.name;
+
+                                				 $("#fir").append("<option>"+id2+"."+id3+"</option>");
+
             },
             error: function() {
-                console.log("error to add new schema!");
+
             },
         });
     };
