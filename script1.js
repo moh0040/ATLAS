@@ -1,4 +1,9 @@
-$(document).ready(function(e) {
+$(function() {
+
+
+
+var $name=$('#Name');
+var $namesp=$('#NameSpace');
 //////////////////////////////////////////Get name
 	$.ajax({
    		type: 'GET',
@@ -47,22 +52,32 @@ $(document).ready(function(e) {
 
 ////////////////////////////////////////////////////////////////////post(name and namespace)
  	$('.button6').on('click', function() {
-	 	var name = $('#Name').val();
-	 	var name_space = $('#NameSpace').val();
-    if (confirm('Do you sure ?')) {
-    	$.ajax({
-      		type: 'PUT',
-      		url: 'http://gate.atlascon.cz:9999/rest/a/'+ name+"/"+name_space ,
-      		contentType: "application/json",
-      		success: function(NewApp) {
-			    $('#note6').html( "data are succcessfully sended to server...");
-      		},
-      		error: function() {
-      		    $('#note7').html("Error in Posting data to server!");
-	    	},
-    	});
-    };
-});
+
+ 	        var order ={
+ 	        name:$name.val(),
+ 	        namespace:$namesp.val(),
+ 	        };
+
+            var a =$name.val();
+            var b=$namesp.val();
+
+       if (confirm('Do you sure ?')) {
+       	$.ajax({
+         		type: 'PUT',
+         		url: 'http://gate.atlascon.cz:9999/rest/a/'+a+"/"+b,
+         		contentType: "application/json",
+         		success: function(data1) {
+
+         		 $("#orders").append(data1.name+"its works");
+         		 $("#orders").append(data1.namespace+"its works");
+         		 console.log(data1);
+         		},
+         		error: function() {
+         		    console.log("error");
+   	    	},
+       	});
+       };
+   });
 
 
 ////////////////////////////////////////end
