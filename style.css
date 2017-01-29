@@ -320,15 +320,7 @@ font-size: 15px;
 margin: 17px 2px;
 
 }
-.button5{
-float: right;
-background-color:#242424;
-width:120px;
-height: 45px;
-margin: -58px 521px 0px 0px;
-border-bottom:groove;
-cursor: pointer;
-}
+
 .button6{
 float: right;
 width:120px;
@@ -350,11 +342,10 @@ cursor: pointer;
 }
 .button8{
 float: right;
-background-color:#242424;
-width:200px;
-height: 50px;
+width:120px;
+height: 45px;
+margin: -58px 519px 0px 0px;
 border-bottom:groove;
-margin-top: 30px;
 cursor: pointer;
 }
 
