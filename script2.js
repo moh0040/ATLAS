@@ -39,6 +39,7 @@ $(document).ready(function(e) {
 
 /////////////////////////////////////////////loading text schema into textarea
 $(".button7").prop("disabled",true);
+$(".button7").css('font-weight', 'normal');
 $('#fir').on("change", function() {
 $('#sec').on("change", function() {
               var one =$("#fir").val();
@@ -72,18 +73,33 @@ $('#sec').on("change", function() {
                         var d="INVALID";
 
                         $(".button1, .button2, .button3, .button4").css('background-color', '#dddddd');
+                        $(".button1, .button2, .button3, .button4").css('color', '#848484');
+                        $(".button1, .button2, .button3, .button4").css('font-weight', 'normal');
+                        $(".button7").css('font-weight', 'bold');
+
                         if (data4==a) {
-                            $(".button1").css('background-color', '#01DF01');
+                            $(".button1").css('background-color', '#00F8B2');
+                            $(".button1").css('color', '#242424');
+                            $(".button1").css('font-weight', 'bold');
                             $(".button7").prop("disabled",false);
                         }else if(data4==b){
-                            $(".button2").css('background-color', '#088A29');
+                            $(".button2").css('background-color', '#01DF01');
+                            $(".button2").css('color', '#242424');
+                            $(".button2").css('font-weight', 'bold');
                             $(".button7").prop("disabled",false);
                         }else if(data4==c){
                             $(".button3").css('background-color', '#FFA200');
+                            $(".button3").css('color', '#242424');
+                            $(".button3").css('font-weight', 'bold');
                             $(".button7").prop("disabled",false);
                         }else if(data4==d){
                             $(".button4").css('background-color', '#FF0000');
+                            $(".button4").css('color', '#242424');
+                            $(".button4").css('font-weight', 'bold');
+
                             $(".button7").prop("disabled",true);
+                            $(".button7").css('font-weight', 'normal');
+
                         }
                             $('#note88').html('State successfully selected ....');
                   },
@@ -161,9 +177,20 @@ $(".button8").on('click', function() {
   });
 
 
-//////////////////////////////////////schema version
+//////////////////////////////////////clean function
+
+$(".button9").on('click', function reset() {
+    if (confirm('Are you sure to clean version and schema values ?')) {
+
+       $('#myTextArea').val('');
+
+      $('input[type=number]').val('');
 
 
+      //$(ve).empty();
+
+    };
+  });
 
 
 

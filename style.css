@@ -311,8 +311,8 @@ font-size:20px;
 
 .button {
 border: none;
-color: white;
-padding: 13px 22px;
+color:#848484;
+padding: 13px 20px;
 text-align: center;
 text-decoration: none;
 display: inline-block;
@@ -363,9 +363,8 @@ float: right;
 background-color:#242424;
 width:120px;
 height: 45px;
+margin: -58px 460px 0px 0px;
 border-bottom:groove;
-margin-top: -60px;
-margin-right:521px;
 cursor: pointer;
 }
 
