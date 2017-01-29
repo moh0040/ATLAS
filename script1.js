@@ -46,10 +46,6 @@ $(document).ready(function(e) {
 
 
 
-
-
-
-
  	$('.button6').on('click', function() {
 	 	var name = $('#Name').val();
 	 	var name_space = $('#NameSpace').val();
