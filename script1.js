@@ -95,11 +95,9 @@ var order =
                 				var id1=order.put.parameters[0].name;
                 				 $("#tbl").append("<option>"+id1+"</option>");
 
-
          		},
          		error: function() {
          		alert("error to adding new name and name-space of application !");
-
    	    	},
        	});
        };
