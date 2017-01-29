@@ -53,10 +53,31 @@ var $namesp=$('#NameSpace');
 ////////////////////////////////////////////////////////////////////post(name and namespace)
  	$('.button6').on('click', function() {
 
- 	        var order ={
- 	        name:$name.val(),
- 	        namespace:$namesp.val(),
- 	        };
+var order =
+            {
+                "put": {
+                    "tags": ["apps"],
+                    "operationId": "createApp",
+                    "parameters": [{
+                        "name": $name.val(),
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }, {
+                        "name": $namesp.val(),
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }],
+                    "responses": {
+                        "default": {
+                            "description": "successful operation"
+                        }
+                    }
+                }
+            };
+
+
 
             var a =$name.val();
             var b=$namesp.val();
@@ -64,16 +85,25 @@ var $namesp=$('#NameSpace');
        if (confirm('Do you sure ?')) {
        	$.ajax({
          		type: 'PUT',
-         		url: 'http://gate.atlascon.cz:9999/rest/a/'+a+"/"+b,
+         		url: 'http://gate.atlascon.cz:9999/rest/a/'+a+'/'+b,
+         		data:order,
          		contentType: "application/json",
-         		success: function(data1) {
+         		success: function(data4) {
 
-         		 $("#orders").append(data1.name+"its works");
-         		 $("#orders").append(data1.namespace+"its works");
-         		 console.log(data1);
+
+
+                				var id1=order.put.parameters[0].name;
+                				 $("#tbl").append("<option>"+id1+"</option>");
+
+
+                				//var id2=order.put.parameters[1].name;
+                				//$("#name").append(id2);
+
+
          		},
          		error: function() {
-         		    console.log("error");
+
+
    	    	},
        	});
        };
