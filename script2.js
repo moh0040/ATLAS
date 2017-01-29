@@ -1,8 +1,10 @@
 $(function() {
+
+var RestApi='http://gate.atlascon.cz:9999/rest/s/';
 ///////////////////////////////////////////////////////////getting schema name
   $.ajax({
       type: 'GET',
-      url: 'http://gate.atlascon.cz:9999/rest/s/listSchemaNames',
+      url: RestApi+'listSchemaNames',
       success: function(data) {
             for (var i = 0; i < data.length; i++) {
                 $("#fir").append("<option>"+data[i]+"</option>");
@@ -18,7 +20,7 @@ $(function() {
   var schem =$("#fir").val();
         $.ajax({
             type: 'GET',
-            url:'http://gate.atlascon.cz:9999/rest/s/listVersions/'+schem,
+            url:RestApi+'listVersions/'+schem,
             success:function(data2){
                 $("#sec").empty();
                 for (var i = 0; i < data2.length; i++) {
@@ -51,7 +53,7 @@ $('#fir').on("change", function() {
         };
       $.ajax({
            type: 'GET',
-           url:'http://gate.atlascon.cz:9999/rest/s/original/'+one+"/"+two,
+           url:RestApi+'original/'+one+"/"+two,
            success:function(data3){
                 var str = JSON.stringify(data3, undefined, 4);
                 $("#myTextArea").html(str);
@@ -63,7 +65,7 @@ $('#fir').on("change", function() {
 //////////////////////////////////////////////////////////////state of schema
               $.ajax({
                   type: 'GET',
-                  url:'http://gate.atlascon.cz:9999/rest/s/state/'+one+"/"+two,
+                  url:RestApi+'state/'+one+"/"+two,
                   success: function(data4) {
                         var a="DRAFT";
                         var b="PUBLISHED";
@@ -108,7 +110,7 @@ $('#fir').on("change", function() {
                 var validation = $('#myTextArea').val();
                 $.ajax({
                      type: 'POST',
-                     url: 'http://gate.atlascon.cz:9999/rest/s/validate',
+                     url: RestApi+'validate',
                      data:validation,
                      contentType: "application/json",
                      success: function(data5) {
@@ -128,7 +130,7 @@ $(".button7").on('click', function() {
     if (confirm('Do you want to change the state of schema ?')) {
         $.ajax({
             type: 'POST',
-            url: 'http://gate.atlascon.cz:9999/rest/s/stateTransition/'+ SchemName+"/"+VerSchem,
+            url: RestApi+'stateTransition/'+ SchemName+"/"+VerSchem,
             contentType: "application/json",
             success: function(data5) {
                 $('#note102').html( "Transition was succcessfull...");
@@ -142,80 +144,59 @@ $(".button7").on('click', function() {
 //////////////////////////////////////////////////////////////// adding new schema ()
 var $ver=$('#tbl_S2');
 var $tex=$('#myTextArea');
-var $orders=$('#d1');
-
-
 $(".button8").on('click', function() {
     if (confirm('Are you sure ?')) {
 
-
-
-
-
-var order =
-{
-  "post": {
-    "tags": [
-      "schemas"
-    ],
-    "operationId": "createUpdateSchema",
-    "consumes": [
-      "application/json"
-    ],
-    "produces": [
-      "application/json"
-    ],
-    "parameters": [
-      {
-        "name": $ver.val(),
-        "in": "path",
-        "required": true,
-        "type": "integer",
-        "format": "int32"
-      },
-      {
-        "in": "path",
-        "name": $tex.val(),
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      }
-    ],
-    "responses": {
-      "default": {
-        "description": "successful operation"
-      }
-    }
-  }
-}
-
-
+                var order =
+                {
+                  "post": {
+                    "tags": [
+                      "schemas"
+                    ],
+                    "operationId": "createUpdateSchema",
+                    "consumes": [
+                      "application/json"
+                    ],
+                    "produces": [
+                      "application/json"
+                    ],
+                    "parameters": [
+                      {
+                        "name": $ver.val(),
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      {
+                        "in": "path",
+                        "name": $tex.val(),
+                        "required": false,
+                        "schema": {
+                          "type": "string"
+                        }
+                      }
+                    ],
+                    "responses": {
+                      "default": {
+                        "description": "successful operation"
+                      }
+                    }
+                  }
+                }
 
         $.ajax({
             type: 'POST',
-            url: 'http://gate.atlascon.cz:9999/rest/s/'+ $ver.val(),
-            //data:order,
+            url: RestApi+ $ver.val(),
             data:$tex.val(),
             contentType: "application/json",
             success: function(data4) {
-
-                console.log(data4);
-                //$orders.append(data4.post.parameters[0].name);
-                $orders.append(data4);
                 $("#fir").append("<option>"+data4+"</option>");
-
-
-
-
             },
             error: function() {
                alert("error to add a new schema !");
             },
         });
-
-
-
     };
 });
 ///////////////////////////////////////////////////////////////////////////clean button
