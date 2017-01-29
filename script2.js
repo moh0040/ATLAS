@@ -214,7 +214,7 @@ $(".button8").on('click', function() {
         var version = $('#tbl_S2').val();
         var SchemaText2 = $('#myTextArea').val();
         $.ajax({
-            type: 'PUT',
+            type: 'POST',
             url: 'http://gate.atlascon.cz:9999/rest/s/'+ version,
             data:SchemaText2,
             contentType: "application/json",
