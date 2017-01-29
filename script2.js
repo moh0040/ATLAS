@@ -17,17 +17,14 @@ $(document).ready(function(e) {
 /////////////////////////////////////////////getting the version of schema
 
   $('#fir').on("change", function() {
+
+
+  $('#spanid').empty();
         var schem =$("#fir").val();
                 $.ajax({
                     type: 'GET',
                     url:'http://gate.atlascon.cz:9999/rest/s/listVersions/'+schem,
                     success:function(data2){
-
-
-
-
-
-
 
 
 
@@ -74,13 +71,9 @@ $('#sec').on("change", function() {
                     success:function(data3){
                     var str = JSON.stringify(data3, undefined, 4);
                         $("#myTextArea").html(str);
-                        $('#test2').html( "Note: Schema succcessfully loaded from server...");
-                        $('#note66').html( "Schema has loaded into textarea....");
                     },
                     error: function() {
-                        $('#test3').html( "error for loading from server...");
-                        $("#myTextArea").empty();
-                        $('#note77').html('error loading Schema text!');
+
                     },
               });
 
@@ -145,18 +138,6 @@ $('#sec').on("change", function() {
                               $('#spanid').html('<h3 style="font-size:14px; color:black; font-weight:bold; font-style:italic;">Invalid Schema : <span style="font-size:20px; color:red; font-weight:bold; font-style:italic;">&#10006;</span></h3>');
                           },
                     });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -246,21 +227,17 @@ $(".button8").on('click', function() {
 //////////////////////////////////////clean function
 
 
-
 $(".button9").on('click', function reset() {
     if (confirm('Are you sure to clean version and schema values ?')) {
 
        $('#myTextArea').val('');
 
-      $('input[type=number]').val('');
-
-
-      //$(ve).empty();
+    $('input[type=number]').val('');
 
     };
   });
 
-/////////////////////////////////////////validation mark
+
 
 
 
