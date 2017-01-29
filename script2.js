@@ -38,6 +38,7 @@ $(document).ready(function(e) {
 
 
 /////////////////////////////////////////////loading text schema into textarea
+$(".button7").prop("disabled",true);
 $('#fir').on("change", function() {
 $('#sec').on("change", function() {
               var one =$("#fir").val();
@@ -69,15 +70,20 @@ $('#sec').on("change", function() {
                         var b="PUBLISHED";
                         var c="DEPRECATED";
                         var d="INVALID";
-                        $(".button1, .button2, .button3, .button4").css('background-color', '#555555');
+
+                        $(".button1, .button2, .button3, .button4").css('background-color', '#dddddd');
                         if (data4==a) {
                             $(".button1").css('background-color', '#01DF01');
+                            $(".button7").prop("disabled",false);
                         }else if(data4==b){
                             $(".button2").css('background-color', '#088A29');
+                            $(".button7").prop("disabled",false);
                         }else if(data4==c){
                             $(".button3").css('background-color', '#FFA200');
+                            $(".button7").prop("disabled",false);
                         }else if(data4==d){
                             $(".button4").css('background-color', '#FF0000');
+                            $(".button7").prop("disabled",true);
                         }
                             $('#note88').html('State successfully selected ....');
                   },
@@ -85,6 +91,8 @@ $('#sec').on("change", function() {
                         $('#note99').html('error loading state!');
                   },
               });
+
+
 });
 });
 //////////////////////////////////////update schema (error 500 on bot side but works)
@@ -110,6 +118,9 @@ var VerSchem = $('#sec').val();
     };//end of if condition
 });
 //////////////////////////////////////Transition
+
+
+
 $(".button7").on('click', function() {
     var SchemName = $('#fir').val();
     var VerSchem = $('#sec').val();
@@ -127,6 +138,8 @@ $(".button7").on('click', function() {
       });
     };//end of if condition
 });
+
+
 ////////////////////////////////////// adding new schema (error 500 on both side but works)
 $(".button8").on('click', function() {
     if (confirm('Are you sure ?')) {
@@ -157,5 +170,8 @@ $(".button8").on('click', function() {
 
 ////////////////////////////////////////end
 });
+
+
+
 
 

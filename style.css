@@ -310,7 +310,6 @@ font-size:20px;
 }
 
 .button {
-background-color: #555555;
 border: none;
 color: white;
 padding: 13px 22px;
@@ -339,9 +338,9 @@ border-bottom:groove;
 margin-top: 34px;
 cursor: pointer;
 }
+
 .button7{
 float: right;
-background-color:#242424;
 width:120px;
 height: 45px;
 border-bottom:groove;
