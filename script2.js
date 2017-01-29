@@ -1,4 +1,4 @@
-$(document).ready(function(e) {
+$(function() {
 /////////////////////////////////////getting schema name
 
   $.ajax({
@@ -11,7 +11,7 @@ $(document).ready(function(e) {
                 $('#note22').html( "Name of Schema are loaded....");
       },
             error: function() {
-                $('#note33').html('error loading schema name!');
+                alert("error to load schema name!");
       },
   });
 /////////////////////////////////////////////getting the version of schema
@@ -41,6 +41,10 @@ $(document).ready(function(e) {
                         }
 
                     },
+                        error: function() {
+                          alert("error to load version of schema!");
+
+                         },
 
                 });
 
@@ -73,6 +77,7 @@ $('#sec').on("change", function() {
                         $("#myTextArea").html(str);
                     },
                     error: function() {
+                    alert("error to load text of schema!");
 
                     },
               });
@@ -119,7 +124,7 @@ $('#sec').on("change", function() {
                             $('#note88').html('State successfully selected ....');
                   },
                   error: function() {
-                        $('#note99').html('error loading state!');
+                        alert("error to load state of schema !");
                   },
               });
               //////////////////////validation mark
@@ -165,7 +170,7 @@ $(".button7").on('click', function() {
                 $('#note102').html( "Transition was succcessfull...");
             },
             error: function() {
-                $('#note103').html("Error in Transition!");
+               alert("error in transition!");
             },
       });
     };//end of if condition
@@ -191,6 +196,7 @@ $(".button8").on('click', function() {
 
             },
             error: function() {
+            alert("error to add a new schema !");
 
             },
         });
