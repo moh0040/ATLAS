@@ -156,7 +156,7 @@ $('#sec').on("change", function() {
 
 
 
-
+/*
 
 //////////////////////////////////////update schema (error 500 on bot side but works)
 $(".button5").on('click', function() {
@@ -170,16 +170,21 @@ var VerSchem = $('#sec').val();
               data:SchemaText1,
               contentType: "application/json",
               success: function(data5) {
-              $('#test1').html( "data are succcessfully post to server...");
+
               $('#note100').html( "data are succcessfully post to server...");
               },
               error: function() {
               $('#test4').html("Error in Posting data to server!");
-              $('#note101').html("Error in Posting data to server!");
+
               },
           });
     };//end of if condition
 });
+
+
+*/
+
+
 //////////////////////////////////////Transition
 
 
@@ -206,18 +211,18 @@ $(".button7").on('click', function() {
 ////////////////////////////////////// adding new schema (error 500 on both side but works)
 $(".button8").on('click', function() {
     if (confirm('Are you sure ?')) {
-        var version = $('#VersionSchema').val();
-        var SchemaText2 = $('#TextAreaSchema').val();
+        var version = $('#tbl_S2').val();
+        var SchemaText2 = $('#myTextArea').val();
         $.ajax({
             type: 'PUT',
             url: 'http://gate.atlascon.cz:9999/rest/s/'+ version,
             data:SchemaText2,
             contentType: "application/json",
-            success: function(NewApp2) {
-                $('#test').html( "New Schema succcessfully upload to server...");
+            success: function() {
+                console.log("new schema added");
             },
             error: function() {
-                $('#test5').html("Error in Posting new schema to server!");
+                console.log("error to add new schema!");
             },
         });
     };
