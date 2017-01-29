@@ -129,10 +129,49 @@ $('#sec').on("change", function() {
                         $('#note99').html('error loading state!');
                   },
               });
+              //////////////////////validation mark
+
+                      var validation = $('#myTextArea').val();
+                      $.ajax({
+                          type: 'POST',
+                          url: 'http://gate.atlascon.cz:9999/rest/s/validate',
+                          data:validation,
+                          contentType: "application/json",
+                          success: function(data5) {
+                              $('#spanid').html('<h3 style="font-size:14px; color:black; font-weight:bold; font-style:italic;">Valid Schema : <span style="font-size:20px; color:#01DF3A; font-weight:bold; font-style:italic;">&#10004;</span></h3>');
+                              console.log("this is valid schema")
+                          },
+                          error: function() {
+                              $('#spanid').html('<h3 style="font-size:14px; color:black; font-weight:bold; font-style:italic;">Invalid Schema : <span style="font-size:20px; color:red; font-weight:bold; font-style:italic;">&#10006;</span></h3>');
+                          },
+                    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 });
 });
+
+
+
+
+
+
+
+
 
 
 
@@ -208,14 +247,6 @@ $(".button8").on('click', function() {
 
 
 
-
-
-
-
-
-
-
-
 $(".button9").on('click', function reset() {
     if (confirm('Are you sure to clean version and schema values ?')) {
 
@@ -229,6 +260,7 @@ $(".button9").on('click', function reset() {
     };
   });
 
+/////////////////////////////////////////validation mark
 
 
 
