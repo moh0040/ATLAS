@@ -53,6 +53,8 @@ var $namesp=$('#NameSpace');
 ////////////////////////////////////////////////////////////////////post(name and namespace)
  	$('.button6').on('click', function() {
 
+
+
 var order =
             {
                 "put": {
@@ -79,6 +81,8 @@ var order =
 
 
 
+
+
             var a =$name.val();
             var b=$namesp.val();
 
@@ -91,18 +95,14 @@ var order =
          		success: function(data4) {
 
 
-
                 				var id1=order.put.parameters[0].name;
                 				 $("#tbl").append("<option>"+id1+"</option>");
-
 
                 				//var id2=order.put.parameters[1].name;
                 				//$("#name").append(id2);
 
-
          		},
          		error: function() {
-
 
    	    	},
        	});
