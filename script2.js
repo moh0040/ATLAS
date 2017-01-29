@@ -22,16 +22,29 @@ $(document).ready(function(e) {
                     type: 'GET',
                     url:'http://gate.atlascon.cz:9999/rest/s/listVersions/'+schem,
                     success:function(data2){
-                             $("#sec").empty();
-                        for (var i = 0; i < data2.length; i++) {
+
+
+
+
+
+
+
+
+
+                    $("#sec").empty();
+
+
+
+
+                         $("#sec").empty();
+                       for (var i = 0; i < data2.length; i++) {
+
 
                             $("#sec").append("<option>"+data2[i]+"</option>");
                         }
-                        $('#note44').append( "<span style=color:#F5F5F5;font-weight:bold>"+ data2 +"</span>  has been selected as version of Schema....");
+
                     },
-                    error: function() {
-                        $('#note55').html('error loading version!');
-                    },
+
                 });
 
  });
@@ -40,12 +53,21 @@ $(document).ready(function(e) {
 /////////////////////////////////////////////loading text schema into textarea
 $(".button7").prop("disabled",true);
 $(".button7").css('font-weight', 'normal');
+$(".button9").prop("disabled",true);
 $('#fir').on("change", function() {
 $('#sec').on("change", function() {
               var one =$("#fir").val();
               var two =$("#sec").val();
               console.log(two);
               $("#tbl_S2").val(two);
+
+                    if ($("#tbl_S2").is('empty')) {
+                    console.log('empty-version-box');
+                    } else {
+                    $(".button9").prop("disabled",false);
+                    $(".button9").css('font-weight', 'bold');
+                    };
+
               $.ajax({
                     type: 'GET',
                     url:'http://gate.atlascon.cz:9999/rest/s/original/'+one+"/"+two,
@@ -111,6 +133,11 @@ $('#sec').on("change", function() {
 
 });
 });
+
+
+
+
+
 //////////////////////////////////////update schema (error 500 on bot side but works)
 $(".button5").on('click', function() {
 var SchemName = $('#fir').val();
@@ -178,6 +205,16 @@ $(".button8").on('click', function() {
 
 
 //////////////////////////////////////clean function
+
+
+
+
+
+
+
+
+
+
 
 $(".button9").on('click', function reset() {
     if (confirm('Are you sure to clean version and schema values ?')) {
