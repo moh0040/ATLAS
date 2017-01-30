@@ -190,6 +190,8 @@ width: 400px;
 height: 400px;
 float:right;
 }
+
+
 #S33{
 width: 580px;
 height: 400px;
@@ -370,6 +372,14 @@ border-bottom:groove;
 cursor: pointer;
 }
 
+.button11{
+float: right;
+width:120px;
+height: 45px;
+margin: -58px 653px 0px 0px;
+border-bottom:groove;
+cursor: pointer;
+}
 
 
 
