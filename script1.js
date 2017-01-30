@@ -2,10 +2,11 @@ $(function() {
 ///////////////////////////////////////////////start
 var $name=$('#Name');
 var $namesp=$('#NameSpace');
+var RestApi1='http://gate.atlascon.cz:9999/rest/a/';
 //////////////////////////////////////////Get nameApp
 	$.ajax({
    		type: 'GET',
-   		url: 'http://gate.atlascon.cz:9999/rest/a/listNames',
+   		url: RestApi1+'listNames',
    		success: function(data) {
    			for (var i = 0; i < data.length; i++) {
      		    $("#tbl").append("<option>"+data[i]+"</option>");
@@ -13,14 +14,14 @@ var $namesp=$('#NameSpace');
    		},
    	  	error: function() {
    	        alert("error to load name of application !");
-    	},
+    	}
 	});
-///////////////////////////////////////////////////Get name-space
+/////////////////////////////////////////////////////////////Get name-space
   $('#tbl').on("change", function() {
         var middle =$("#tbl").val();
 		$.ajax({
 			type: 'GET',
-			url:'http://gate.atlascon.cz:9999/rest/a/'+middle+'/namespace',
+			url:RestApi1+middle+'/namespace',
 			success:function(data2){
      		    document.getElementById('tbl_S').value = data2;
 			},
@@ -72,7 +73,7 @@ var $namesp=$('#NameSpace');
             if (confirm('Do you sure ?')) {
                 $.ajax({
                     type: 'PUT',
-                    url: 'http://gate.atlascon.cz:9999/rest/a/'+a+'/'+b,
+                    url: RestApi1+a+'/'+b,
                     data:order,
                     contentType: "application/json",
                     success: function(data4) {
@@ -84,7 +85,8 @@ var $namesp=$('#NameSpace');
                     },
                 });
             };
+            $("#Name").val('');
+            $("#NameSpace").val('');
    });
 ////////////////////////////////////////end
 });
-
