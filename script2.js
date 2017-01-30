@@ -125,15 +125,51 @@ $('#fir').on("change", function() {
 });
 ////////////////////////////////////////////////////////////////////Transition
 $(".button7").on('click', function() {
+$('#state3').show(20).delay(4000).hide(50);
     var SchemName = $('#fir').val();
     var VerSchem = $('#sec').val();
     if (confirm('Do you want to change the state of schema ?')) {
+    var order0 =
+    {
+      "post": {
+        "tags": [
+          "schemas"
+        ],
+        "operationId": "transitState",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": SchemName,
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": VerSchem,
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    };
         $.ajax({
             type: 'POST',
             url: RestApi+'stateTransition/'+ SchemName+"/"+VerSchem,
             contentType: "application/json",
             success: function(data5) {
-                $('#note102').html( "Transition was succcessfull...");
+                console.log(data5);
+                $("#state3").html('<h3 style="font-size:15px; color:green; font-weight:bold; font-style:italic;">State Changed... </h3>');
             },
             error: function() {
                alert("error in transition!");
@@ -183,7 +219,7 @@ $(".button8").on('click', function() {
                       }
                     }
                   }
-                }
+                };
 
         $.ajax({
             type: 'POST',
@@ -204,6 +240,7 @@ $(".button9").on('click', function reset() {
     if (confirm('Are you sure to clean version and schema values ?')) {
        $('#myTextArea').val('');
        $('input[type=number]').val('');
+       $(".button8").prop("disabled",false);
     };
   });
 /////////////////////////////////////////////////////////////////////////////////end
