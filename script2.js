@@ -16,11 +16,15 @@ var RestApi='http://gate.atlascon.cz:9999/rest/s/';
   });
 /////////////////////////////////////////////////////getting the version of schema
   $('#fir').on("change", function() {
+  $('#myTextArea').empty();
   $('#spanid').empty();
+ $('input[type=number]').val('');
+
   var schem =$("#fir").val();
         $.ajax({
             type: 'GET',
             url:RestApi+'listVersions/'+schem,
+            contentType: "application/json",
             success:function(data2){
                 $("#sec").empty();
                 for (var i = 0; i < data2.length; i++) {
@@ -37,6 +41,7 @@ $(".button7").prop("disabled",true);
 $(".button7").css('font-weight', 'normal');
 $(".button9").prop("disabled",true);
 $(".button8").prop("disabled",true);
+$(".button11").prop("disabled",true);
 
 
 $('#fir').on("change", function() {
@@ -56,7 +61,7 @@ $('#fir').on("change", function() {
            url:RestApi+'original/'+one+"/"+two,
            success:function(data3){
                 var str = JSON.stringify(data3, undefined, 4);
-                $("#myTextArea").html(str);
+                $("#myTextArea").val(str);
             },
             error: function() {
                  alert("error to load text of schema!");
@@ -81,18 +86,21 @@ $('#fir').on("change", function() {
                             $(".button1").css('font-weight', 'bold');
                             $(".button7").prop("disabled",false);
                             $(".button8").prop("disabled",false);
+                            $(".button11").prop("disabled",false);
                         }else if(data4==b){
                             $(".button2").css('background-color', '#01DF01');
                             $(".button2").css('color', '#242424');
                             $(".button2").css('font-weight', 'bold');
                             $(".button7").prop("disabled",false);
                             $(".button8").prop("disabled",true);
+                            $(".button11").prop("disabled",false);
                         }else if(data4==c){
                             $(".button3").css('background-color', '#FFA200');
                             $(".button3").css('color', '#242424');
                             $(".button3").css('font-weight', 'bold');
                             $(".button7").prop("disabled",false);
                             $(".button8").prop("disabled",true);
+                            $(".button11").prop("disabled",false);
                         }else if(data4==d){
                             $(".button4").css('background-color', '#FF0000');
                             $(".button4").css('color', '#242424');
@@ -100,6 +108,7 @@ $('#fir').on("change", function() {
                             $(".button7").prop("disabled",true);
                             $(".button7").css('font-weight', 'normal');
                             $(".button8").prop("disabled",true);
+                            $(".button11").prop("disabled",false);
                         }
                   },
                   error: function() {
@@ -115,7 +124,7 @@ $('#fir').on("change", function() {
                      contentType: "application/json",
                      success: function(data5) {
                         $('#spanid').html('<h3 style="font-size:14px; color:black; font-weight:bold; font-style:italic;">Valid Schema : <span style="font-size:20px; color:#01DF3A; font-weight:bold; font-style:italic;">&#10004;</span></h3>');
-                        console.log("this is valid schema")
+
                      },
                      error: function() {
                          $('#spanid').html('<h3 style="font-size:14px; color:black; font-weight:bold; font-style:italic;">Invalid Schema : <span style="font-size:20px; color:red; font-weight:bold; font-style:italic;">&#10006;</span></h3>');
@@ -123,6 +132,11 @@ $('#fir').on("change", function() {
                 });
     });
 });
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////Transition
 $(".button7").on('click', function() {
 $('#state3').show(20).delay(4000).hide(50);
@@ -238,15 +252,31 @@ $(".button8").on('click', function() {
 ///////////////////////////////////////////////////////////////////////////clean button
 $(".button9").on('click', function reset() {
     if (confirm('Are you sure to clean version and schema values ?')) {
-       $('#myTextArea').val('');
+        $('#myTextArea').val('');
+        $('#spanid').empty();
        $('input[type=number]').val('');
-       $(".button8").prop("disabled",false);
+       $(".button8").prop("disabled",true);
     };
   });
+  ////////////////////////////////////////////////////////////////////validation button
+  $(".button11").on('click', function() {
+                var validation = $('#myTextArea').val();
+                $.ajax({
+                     type: 'POST',
+                     url: RestApi+'validate',
+                     data:validation,
+                     contentType: "application/json",
+                     success: function(valid) {
+                        if (valid===true) {
+                            $('#spanid').html('<h3 style="font-size:14px; color:black; font-weight:bold; font-style:italic;">Valid Schema : <span style="font-size:20px; color:#01DF3A; font-weight:bold; font-style:italic;">&#10004;</span></h3>');
+
+                        }else if(valid===false){
+                         $('#spanid').html('<h3 style="font-size:14px; color:black; font-weight:bold; font-style:italic;">Invalid Schema : <span style="font-size:20px; color:red; font-weight:bold; font-style:italic;">&#10006;</span></h3>');
+                        }
+                     },
+                     error: function() {
+                     },
+                });
+                });
 /////////////////////////////////////////////////////////////////////////////////end
 });
-
-
-
-
-
